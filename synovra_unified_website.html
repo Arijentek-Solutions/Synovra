@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synovra Technologies - Revival First: The Smarter Battery Afterlife</title>
+    <meta name="description" content="Revolutionary battery revival technology that extends battery life before recycling becomes necessary. Sustainable solutions for a cleaner tomorrow.">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔋</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================================
+           UNIFIED DESIGN SYSTEM
+           ================================ */
+        
+        :root {
+            /* Synovra Brand Colors */
+            --synovra-primary: #ed9a2f;
+            --synovra-accent: #fe8d02;
+            --synovra-text-primary: #333333;
+            --synovra-text-secondary: #666666;
+            --synovra-text-muted: #999999;
+            --synovra-background: #ffffff;
+            --synovra-light-bg: #f8f9fa;
+            --synovra-border: #e9ecef;
+            --synovra-border-light: #f1f3f4;
+            --synovra-dark-bg: #2f190b;
+            
+            /* Typography */
+            --font-family-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-weight-light: 300;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing - 8px Grid System */
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-8: 64px;
+            
+            /* Touch Targets */
+            --touch-target-min: 44px;
+            --touch-target-recommended: 48px;
+            
+            /* Borders & Radius */
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-xl: 16px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+            
+            /* Transitions */
+            --transition-fast: all 0.15s ease;
+            --transition-normal: all 0.3s ease;
+            
+            /* Z-Index Scale */
+            --z-dropdown: 1000;
+            --z-sticky: 1020;
+            --z-fixed: 1030;
+            --z-modal: 1050;
+        }
+
+        /* ================================
+           RESET & BASE STYLES
+           ================================ */
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-family-primary);
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--synovra-text-primary);
+            background-color: var(--synovra-background);
+            font-weight: var(--font-weight-normal);
+        }
+
+        /* ================================
+           CONTAINER SYSTEM
+           ================================ */
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: var(--space-2);
+            padding-right: var(--space-2);
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding-left: var(--space-4);
+                padding-right: var(--space-4);
+            }
+        }
+
+        /* ================================
+           HEADER STYLES
+           ================================ */
+        
+        .synovra-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--synovra-border-light);
+            z-index: var(--z-fixed);
+            transition: var(--transition-normal);
+        }
+
+        .synovra-header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-2);
+        }
+
+        @media (min-width: 768px) {
+            .header-container {
+                padding: 0 var(--space-4);
+            }
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--synovra-text-primary);
+            font-weight: var(--font-weight-semibold);
+            font-size: 1.25rem;
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--synovra-primary), var(--synovra-accent));
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: var(--font-weight-semibold);
+            font-size: 18px;
+            margin-right: 12px;
+        }
+
+        .header-nav {
+            display: none;
+            list-style: none;
+            gap: var(--space-4);
+        }
+
+        @media (min-width: 992px) {
+            .header-nav {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--synovra-text-secondary);
+            font-weight: var(--font-weight-medium);
+            transition: var(--transition-fast);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--border-radius-sm);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--synovra-primary);
+            background: rgba(237, 154, 47, 0.1);
+        }
+
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        @media (min-width: 992px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background: var(--synovra-text-primary);
+            margin: 3px 0;
+            transition: var(--transition-fast);
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: var(--z-modal);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-normal);
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -300px;
+            width: 280px;
+            height: calc(100vh - 70px);
+            background: var(--synovra-background);
+            box-shadow: var(--shadow-lg);
+            z-index: var(--z-modal);
+            transition: var(--transition-normal);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-nav {
+            list-style: none;
+            padding: var(--space-4);
+        }
+
+        .mobile-nav .nav-item {
+            margin-bottom: var(--space-2);
+        }
+
+        .mobile-nav .nav-link {
+            display: block;
+            padding: var(--space-2);
+            min-height: var(--touch-target-recommended);
+            display: flex;
+            align-items: center;
+        }
+
+        /* ================================
+           HERO SECTION STYLES
+           ================================ */
+        
+        .synovra-hero {
+            background: linear-gradient(-45deg, #ffffff, #f8f9fa, #ffffff, #faf8f5);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            padding: 120px 0 var(--space-8);
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-2);
+        }
+
+        @media (min-width: 768px) {
+            .hero-container {
+                padding: 0 var(--space-4);
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            gap: var(--space-8);
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 2fr 1fr;
+                gap: var(--space-8);
+            }
+        }
+
+        .hero-headline {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            line-height: 1.2;
+            color: var(--synovra-text-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        @media (min-width: 768px) {
+            .hero-headline {
+                font-size: 3.5rem;
+            }
+        }
+
+        .highlight {
+            color: var(--synovra-primary);
+            position: relative;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--synovra-primary);
+            opacity: 0.3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--synovra-text-secondary);
+            margin-bottom: var(--space-6);
+            line-height: 1.6;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-synovra {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: var(--touch-target-recommended);
+            padding: 14px var(--space-4);
+            background: var(--synovra-primary);
+            color: white;
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            border-radius: var(--border-radius-md);
+            transition: var(--transition-fast);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary-synovra:hover {
+            background: var(--synovra-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary-synovra {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: var(--touch-target-recommended);
+            padding: 14px var(--space-4);
+            background: transparent;
+            color: var(--synovra-primary);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            border: 2px solid var(--synovra-primary);
+            border-radius: var(--border-radius-md);
+            transition: var(--transition-fast);
+        }
+
+        .btn-secondary-synovra:hover {
+            background: var(--synovra-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--space-4);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--space-3);
+            border-radius: var(--border-radius-md);
+            transition: var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: rgba(237, 154, 47, 0.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-1);
+            display: block;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--synovra-primary);
+            display: block;
+            margin-bottom: var(--space-1);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--synovra-text-secondary);
+            font-weight: var(--font-weight-medium);
+            line-height: 1.2;
+        }
+
+        /* ================================
+           PROBLEM/SOLUTION SECTION
+           ================================ */
+        
+        .problem-solution-section {
+            padding: var(--space-8) 0;
+            background: var(--synovra-light-bg);
+            position: relative;
+        }
+
+        .problem-solution-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-2);
+        }
+
+        @media (min-width: 768px) {
+            .problem-solution-container {
+                padding: 0 var(--space-4);
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--synovra-text-primary);
+            margin-bottom: var(--space-3);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--synovra-text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .problem-solution-grid {
+            display: grid;
+            gap: var(--space-6);
+        }
+
+        @media (min-width: 992px) {
+            .problem-solution-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-8);
+            }
+        }
+
+        .ps-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            border: 1px solid var(--synovra-border);
+        }
+
+        .ps-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .ps-card__header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-4);
+        }
+
+        .ps-card__icon {
+            font-size: 2.5rem;
+            margin-right: var(--space-3);
+        }
+
+        .ps-card--problem .ps-card__icon {
+            opacity: 0.6;
+        }
+
+        .ps-card--solution .ps-card__icon {
+            color: var(--synovra-primary);
+        }
+
+        .ps-card__title {
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--synovra-text-primary);
+            margin: 0;
+        }
+
+        .ps-card__description {
+            font-size: 1rem;
+            color: var(--synovra-text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-4);
+        }
+
+        .ps-card__list {
+            list-style: none;
+            margin-bottom: var(--space-4);
+        }
+
+        .ps-card__list-item {
+            position: relative;
+            padding-left: var(--space-3);
+            margin-bottom: var(--space-2);
+            color: var(--synovra-text-secondary);
+        }
+
+        .ps-card__list-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--synovra-text-muted);
+        }
+
+        .ps-card--solution .ps-card__list-item::before {
+            content: '✓';
+            color: var(--synovra-primary);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .ps-card__cta {
+            display: inline-flex;
+            align-items: center;
+            color: var(--synovra-primary);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: var(--transition-fast);
+        }
+
+        .ps-card__cta::after {
+            content: '→';
+            margin-left: var(--space-1);
+            transition: var(--transition-fast);
+        }
+
+        .ps-card__cta:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* ================================
+           METRICS SHOWCASE SECTION
+           ================================ */
+        
+        .metrics-showcase {
+            padding: var(--space-8) 0;
+            background: white;
+            position: relative;
+        }
+
+        .metrics-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-2);
+        }
+
+        @media (min-width: 768px) {
+            .metrics-container {
+                padding: 0 var(--space-4);
+            }
+        }
+
+        .metrics-header {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .metrics-title {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--synovra-text-primary);
+            margin-bottom: var(--space-3);
+        }
+
+        .metrics-subtitle {
+            font-size: 1.125rem;
+            color: var(--synovra-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .metric-card {
+            background: white;
+            border: 1px solid var(--synovra-border);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-6);
+            text-align: center;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--synovra-primary);
+        }
+
+        .metric-card .metric-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-3);
+            display: block;
+            opacity: 0.8;
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--synovra-primary);
+            margin-bottom: var(--space-2);
+            display: block;
+        }
+
+        .metric-card--percentage .metric-number::after {
+            content: '%';
+        }
+
+        .metric-card--plus .metric-number::after {
+            content: '%+';
+        }
+
+        .metric-label {
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--synovra-text-primary);
+            margin-bottom: var(--space-1);
+        }
+
+        .metric-description {
+            color: var(--synovra-text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* ================================
+           CARDS SECTION
+           ================================ */
+        
+        .cards-section {
+            padding: var(--space-8) 0;
+            background: var(--synovra-light-bg);
+        }
+
+        .cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-2);
+        }
+
+        @media (min-width: 768px) {
+            .cards-container {
+                padding: 0 var(--space-4);
+            }
+        }
+
+        .cards-grid {
+            display: grid;
+            gap: var(--space-6);
+        }
+
+        .cards-grid--2-col {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .cards-grid--3-col {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            border: 1px solid var(--synovra-border);
+        }
+
+        .card--interactive {
+            cursor: pointer;
+        }
+
+        .card--interactive:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card__header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-4);
+        }
+
+        .card__icon {
+            font-size: 2rem;
+            margin-right: var(--space-3);
+            color: var(--synovra-primary);
+        }
+
+        .card__title {
+            font-size: 1.25rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--synovra-text-primary);
+            margin: 0;
+        }
+
+        .card__description {
+            color: var(--synovra-text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-4);
+        }
+
+        .card__cta {
+            color: var(--synovra-primary);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: var(--transition-fast);
+        }
+
+        .card__cta::after {
+            content: '→';
+            margin-left: var(--space-1);
+            transition: var(--transition-fast);
+        }
+
+        .card__cta:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* ================================
+           FOOTER STYLES
+           ================================ */
+        
+        .synovra-footer {
+            background: var(--synovra-dark-bg);
+            color: white;
+            padding: var(--space-8) 0 var(--space-4);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-2);
+        }
+
+        @media (min-width: 768px) {
+            .footer-container {
+                padding: 0 var(--space-4);
+            }
+        }
+
+        .footer-content {
+            display: grid;
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
+                gap: var(--space-8);
+            }
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-weight: var(--font-weight-semibold);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-3);
+        }
+
+        .footer-logo__icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--synovra-primary), var(--synovra-accent));
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: var(--font-weight-semibold);
+            font-size: 18px;
+            margin-right: 12px;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-column__title {
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-3);
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links__item {
+            margin-bottom: var(--space-2);
+        }
+
+        .footer-links__link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition-fast);
+            padding: var(--space-1) 0;
+            display: block;
+        }
+
+        .footer-links__link:hover {
+            color: var(--synovra-primary);
+        }
+
+        .footer-contact__item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--space-3);
+        }
+
+        .footer-contact__icon {
+            margin-right: var(--space-2);
+            margin-top: 2px;
+        }
+
+        .footer-contact__link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-contact__link:hover {
+            color: var(--synovra-primary);
+        }
+
+        .footer-social {
+            margin-top: var(--space-4);
+        }
+
+        .footer-social__title {
+            font-size: 1rem;
+            font-weight: var(--font-weight-medium);
+            margin-bottom: var(--space-2);
+            color: white;
+        }
+
+        .footer-social__links {
+            display: flex;
+            gap: var(--space-2);
+        }
+
+        .footer-social__link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: var(--transition-fast);
+        }
+
+        .footer-social__link:hover {
+            background: var(--synovra-primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-4);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+
+        .footer-copyright__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-3);
+        }
+
+        @media (max-width: 768px) {
+            .footer-copyright__content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .footer-copyright__links {
+            display: flex;
+            gap: var(--space-4);
+        }
+
+        .footer-copyright__link {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-copyright__link:hover {
+            color: var(--synovra-primary);
+        }
+
+        /* ================================
+           ANIMATION UTILITIES
+           ================================ */
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
+        .animate-delay-500 { animation-delay: 0.5s; }
+        .animate-delay-600 { animation-delay: 0.6s; }
+
+        /* ================================
+           RESPONSIVE DESIGN
+           ================================ */
+        
+        @media (max-width: 768px) {
+            .hero-headline {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .metrics-title {
+                font-size: 2rem;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn-primary-synovra,
+            .btn-secondary-synovra {
+                text-align: center;
+            }
+        }
+
+        /* ================================
+           ACCESSIBILITY
+           ================================ */
+        
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .btn-primary-synovra:focus,
+        .btn-secondary-synovra:focus,
+        .nav-link:focus,
+        .footer-links__link:focus {
+            outline: 2px solid var(--synovra-primary);
+            outline-offset: 2px;
+        }
+
+        /* Social media icons using emojis */
+        .social-linkedin::before { content: '💼'; }
+        .social-twitter::before { content: '🐦'; }
+        .social-youtube::before { content: '📺'; }
+        .social-github::before { content: '⚡'; }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <header class="synovra-header" id="header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <a href="#" class="header-logo">
+                <div class="logo-placeholder">S</div>
+                <span>Synovra</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="header-nav" role="navigation" aria-label="Main Navigation">
+                <ul class="header-nav">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#why-revive" class="nav-link">Why Revive</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#technology" class="nav-link">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button 
+                class="mobile-menu-btn" 
+                id="mobileMenuBtn"
+                aria-label="Toggle mobile menu"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <!-- Mobile Menu Panel -->
+    <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile Navigation">
+        <ul class="mobile-nav">
+            <li class="nav-item">
+                <a href="#home" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#why-revive" class="nav-link">Why Revive</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#technology" class="nav-link">Technology</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="synovra-hero" id="home">
+        <div class="hero-container">
+            <div class="hero-grid">
+                <!-- Main Content -->
+                <div class="hero-content">
+                    <h1 class="hero-headline animate-fade-in-up">
+                        <span class="highlight">Revival First</span>:<br>
+                        The Smarter Battery Afterlife
+                    </h1>
+                    
+                    <p class="hero-subtitle animate-fade-in-up animate-delay-200">
+                        Revolutionary technology that extends battery life through innovative revival processes, 
+                        creating sustainable solutions for a cleaner tomorrow before recycling becomes necessary.
+                    </p>
+                    
+                    <div class="hero-cta-group animate-fade-in-up animate-delay-400">
+                        <a href="#get-started" class="btn-primary-synovra">
+                            <span>Get Started</span>
+                            <span style="margin-left: 8px;">→</span>
+                        </a>
+                        <a href="#learn-more" class="btn-secondary-synovra">
+                            <span>Learn More</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Stats Section -->
+                <div class="hero-stats animate-fade-in-up animate-delay-300">
+                    <div class="stat-item animate-fade-in-up animate-delay-500">
+                        <div class="stat-icon">⚡</div>
+                        <span class="stat-number" data-target="85">0</span>
+                        <div class="stat-label">Battery Life<br>Extension</div>
+                    </div>
+                    
+                    <div class="stat-item animate-fade-in-up animate-delay-600">
+                        <div class="stat-icon">🌱</div>
+                        <span class="stat-number" data-target="50">0</span>
+                        <div class="stat-label">Carbon<br>Reduction</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">🔄</div>
+                        <span class="stat-number" data-target="3">0</span>
+                        <div class="stat-label">Lifespan<br>Multiplier</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution-section" id="why-revive">
+        <div class="problem-solution-container">
+            <!-- Section Header -->
+            <header class="section-header">
+                <h2 class="section-title">Why Revival First?</h2>
+                <p class="section-subtitle">
+                    Traditional battery recycling happens too early. Synovra's innovative approach extends battery life before recycling becomes necessary, creating true sustainability.
+                </p>
+            </header>
+            
+            <!-- Problem/Solution Grid -->
+            <div class="problem-solution-grid">
+                <!-- Problem Card -->
+                <article class="ps-card ps-card--problem">
+                    <div class="ps-card__header">
+                        <div class="ps-card__icon">⚠️</div>
+                        <h3 class="ps-card__title">The Problem</h3>
+                    </div>
+                    
+                    <div class="ps-card__content">
+                        <p class="ps-card__description">
+                            Traditional battery recycling creates environmental waste and loses valuable materials. Most batteries are discarded when they still have significant recoverable capacity.
+                        </p>
+                        
+                        <ul class="ps-card__list">
+                            <li class="ps-card__list-item">Premature battery disposal increases electronic waste</li>
+                            <li class="ps-card__list-item">Valuable lithium and rare earth materials are lost</li>
+                            <li class="ps-card__list-item">High environmental cost of mining new materials</li>
+                            <li class="ps-card__list-item">Energy-intensive recycling processes</li>
+                            <li class="ps-card__list-item">Short battery lifecycles drive replacement demand</li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <!-- Solution Card -->
+                <article class="ps-card ps-card--solution">
+                    <div class="ps-card__header">
+                        <div class="ps-card__icon">✨</div>
+                        <h3 class="ps-card__title">The Solution</h3>
+                    </div>
+                    
+                    <div class="ps-card__content">
+                        <p class="ps-card__description">
+                            Synovra's battery revival technology extends battery life by up to 85% through advanced restoration processes. Our smart diagnostics identify recoverable capacity and restore batteries to like-new performance.
+                        </p>
+                        
+                        <ul class="ps-card__list">
+                            <li class="ps-card__list-item">Extend battery life by 85% on average</li>
+                            <li class="ps-card__list-item">Reduce electronic waste by 50%</li>
+                            <li class="ps-card__list-item">AI-powered diagnostics and restoration</li>
+                            <li class="ps-card__list-item">3x lifespan multiplier for processed batteries</li>
+                            <li class="ps-card__list-item">Sustainable approach to battery management</li>
+                        </ul>
+                        
+                        <div class="ps-card__footer">
+                            <a href="#technology" class="ps-card__cta">Learn How It Works</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Showcase Section -->
+    <section class="metrics-showcase" id="metrics">
+        <div class="metrics-container">
+            <!-- Section Header -->
+            <div class="metrics-header">
+                <h2 class="metrics-title">Proven Results</h2>
+                <p class="metrics-subtitle">
+                    Real impact, measurable outcomes, and reliable service delivery
+                </p>
+            </div>
+            
+            <!-- Metrics Grid -->
+            <div class="metrics-grid">
+                <!-- Battery Performance Restoration -->
+                <div class="metric-card metric-card--percentage">
+                    <div class="metric-icon">🔋</div>
+                    <div class="metric-number">
+                        <span class="metric-number__animated" data-target="95">0</span>
+                    </div>
+                    <h3 class="metric-label">Battery Performance</h3>
+                    <p class="metric-description">Restoration Success Rate</p>
+                </div>
+                
+                <!-- CO₂ Reduction -->
+                <div class="metric-card metric-card--plus">
+                    <div class="metric-icon">🌱</div>
+                    <div class="metric-number">
+                        <span class="metric-number__animated" data-target="90">0</span>
+                    </div>
+                    <h3 class="metric-label">CO₂ Reduction</h3>
+                    <p class="metric-description">Compared to Traditional Recycling</p>
+                </div>
+                
+                <!-- Traceable Impact -->
+                <div class="metric-card metric-card--percentage">
+                    <div class="metric-icon">📊</div>
+                    <div class="metric-number">
+                        <span class="metric-number__animated" data-target="100">0</span>
+                    </div>
+                    <h3 class="metric-label">Traceable Impact</h3>
+                    <p class="metric-description">Full Transparency & Reporting</p>
+                </div>
+                
+                <!-- Flexible Pickup -->
+                <div class="metric-card">
+                    <div class="metric-icon">🚚</div>
+                    <div class="metric-number">
+                        <span class="metric-number__animated" data-target="24">0</span>/7
+                    </div>
+                    <h3 class="metric-label">Flexible Pickup</h3>
+                    <p class="metric-description">Around-the-Clock Service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Cards Section -->
+    <section class="cards-section" id="technology">
+        <div class="cards-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Technology</h2>
+                <p class="section-subtitle">
+                    Advanced battery revival solutions powered by cutting-edge technology and sustainable practices
+                </p>
+            </div>
+            
+            <div class="cards-grid cards-grid--3-col">
+                <article class="card card--interactive">
+                    <div class="card__header">
+                        <div class="card__icon">🔋</div>
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">Battery Revival Technology</h3>
+                        <p class="card__description">Advanced algorithms and hardware solutions that restore battery capacity and extend operational life by up to 85%.</p>
+                    </div>
+                    <div class="card__footer">
+                        <a href="#" class="card__cta">Learn More</a>
+                    </div>
+                </article>
+                
+                <article class="card card--interactive">
+                    <div class="card__header">
+                        <div class="card__icon">🌱</div>
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">Sustainable Solutions</h3>
+                        <p class="card__description">Reduce electronic waste by 50% through innovative revival processes before recycling becomes necessary.</p>
+                    </div>
+                    <div class="card__footer">
+                        <a href="#" class="card__cta">Explore Impact</a>
+                    </div>
+                </article>
+                
+                <article class="card card--interactive">
+                    <div class="card__header">
+                        <div class="card__icon">💡</div>
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">Smart Diagnostics</h3>
+                        <p class="card__description">AI-powered battery health analysis provides precise revival strategies tailored to each battery's unique condition.</p>
+                    </div>
+                    <div class="card__footer">
+                        <a href="#" class="card__cta">View Technology</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="synovra-footer" id="contact">
+        <div class="footer-container">
+            <!-- Main Footer Content -->
+            <div class="footer-content">
+                <!-- Company Info Column -->
+                <div class="footer-column">
+                    <a href="#" class="footer-logo">
+                        <div class="footer-logo__icon">S</div>
+                        <span>Synovra</span>
+                    </a>
+                    
+                    <p class="footer-description">
+                        Leading the future of battery revival technology. We extend battery life through innovative restoration processes, creating sustainable solutions before recycling becomes necessary.
+                    </p>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h3 class="footer-column__title">Quick Links</h3>
+                    <nav>
+                        <ul class="footer-links">
+                            <li class="footer-links__item">
+                                <a href="#home" class="footer-links__link">Home</a>
+                            </li>
+                            <li class="footer-links__item">
+                                <a href="#why-revive" class="footer-links__link">Why Revive Before You Recycle</a>
+                            </li>
+                            <li class="footer-links__item">
+                                <a href="#about" class="footer-links__link">About Us</a>
+                            </li>
+                            <li class="footer-links__item">
+                                <a href="#technology" class="footer-links__link">Technology</a>
+                            </li>
+                            <li class="footer-links__item">
+                                <a href="#contact" class="footer-links__link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Contact Details Column -->
+                <div class="footer-column">
+                    <h3 class="footer-column__title">Contact Details</h3>
+                    
+                    <div class="footer-contact">
+                        <div class="footer-contact__item">
+                            <span class="footer-contact__icon">📧</span>
+                            <div class="footer-contact__text">
+                                <a href="mailto:contact@synovra.com" class="footer-contact__link">
+                                    contact@synovra.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-contact__item">
+                            <span class="footer-contact__icon">📞</span>
+                            <div class="footer-contact__text">
+                                <a href="tel:+15551234567" class="footer-contact__link">
+                                    +1 (555) 123-4567
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-contact__item">
+                            <span class="footer-contact__icon">📍</span>
+                            <div class="footer-contact__text">
+                                123 Innovation Drive<br>
+                                Tech Hub District<br>
+                                San Francisco, CA 94105
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="footer-social">
+                        <h4 class="footer-social__title">Follow Us</h4>
+                        <div class="footer-social__links">
+                            <a href="#" class="footer-social__link social-linkedin" aria-label="LinkedIn"></a>
+                            <a href="#" class="footer-social__link social-twitter" aria-label="Twitter"></a>
+                            <a href="#" class="footer-social__link social-youtube" aria-label="YouTube"></a>
+                            <a href="#" class="footer-social__link social-github" aria-label="GitHub"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright Bar -->
+            <div class="footer-copyright">
+                <div class="footer-copyright__content">
+                    <p class="footer-copyright__text">
+                        © 2024 Synovra Technologies. All rights reserved.
+                    </p>
+                    <nav class="footer-copyright__links">
+                        <a href="#" class="footer-copyright__link">Privacy Policy</a>
+                        <a href="#" class="footer-copyright__link">Terms of Service</a>
+                        <a href="#" class="footer-copyright__link">Cookie Policy</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Unified Website JavaScript
+        class SynovraWebsite {
+            constructor() {
+                this.header = document.getElementById('header');
+                this.mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                this.mobileMenu = document.getElementById('mobileMenu');
+                this.mobileOverlay = document.getElementById('mobileOverlay');
+                this.isMenuOpen = false;
+                
+                this.init();
+            }
+            
+            init() {
+                this.setupHeader();
+                this.setupCounters();
+                this.setupSmoothScroll();
+                this.setupAnimations();
+                this.setupAccessibility();
+            }
+            
+            setupHeader() {
+                // Mobile menu toggle
+                this.mobileMenuBtn.addEventListener('click', () => {
+                    this.toggleMobileMenu();
+                });
+                
+                // Close menu on overlay click
+                this.mobileOverlay.addEventListener('click', () => {
+                    this.closeMobileMenu();
+                });
+                
+                // Close menu on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isMenuOpen) {
+                        this.closeMobileMenu();
+                    }
+                });
+                
+                // Close menu when clicking nav links
+                const mobileNavLinks = this.mobileMenu.querySelectorAll('.nav-link');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        this.closeMobileMenu();
+                    });
+                });
+                
+                // Scroll effect
+                let ticking = false;
+                const updateScrollEffect = () => {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (scrollTop > 50) {
+                        this.header.classList.add('scrolled');
+                    } else {
+                        this.header.classList.remove('scrolled');
+                    }
+                    
+                    ticking = false;
+                };
+                
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(updateScrollEffect);
+                        ticking = true;
+                    }
+                });
+                
+                // Active navigation
+                this.setupActiveNavigation();
+            }
+            
+            setupActiveNavigation() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                window.addEventListener('scroll', () => {
+                    let current = '';
+                    
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        if (window.pageYOffset >= (sectionTop - 200)) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${current}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+            }
+            
+            toggleMobileMenu() {
+                if (this.isMenuOpen) {
+                    this.closeMobileMenu();
+                } else {
+                    this.openMobileMenu();
+                }
+            }
+            
+            openMobileMenu() {
+                this.isMenuOpen = true;
+                this.mobileMenuBtn.classList.add('active');
+                this.mobileMenu.classList.add('active');
+                this.mobileOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                this.mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            }
+            
+            closeMobileMenu() {
+                this.isMenuOpen = false;
+                this.mobileMenuBtn.classList.remove('active');
+                this.mobileMenu.classList.remove('active');
+                this.mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                this.mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+            
+            setupCounters() {
+                const observerOptions = {
+                    threshold: 0.5,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.animateCounters(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                
+                // Observe hero stats
+                const heroStats = document.querySelector('.hero-stats');
+                if (heroStats) {
+                    observer.observe(heroStats);
+                }
+                
+                // Observe metrics section
+                const metricsSection = document.querySelector('.metrics-showcase');
+                if (metricsSection) {
+                    observer.observe(metricsSection);
+                }
+            }
+            
+            animateCounters(section) {
+                const statNumbers = section.querySelectorAll('.stat-number, .metric-number__animated');
+                
+                statNumbers.forEach((element, index) => {
+                    const target = parseInt(element.dataset.target);
+                    
+                    setTimeout(() => {
+                        this.animateCounter(element, target);
+                    }, index * 200);
+                });
+            }
+            
+            animateCounter(element, target, duration = 1500) {
+                const start = 0;
+                const increment = target / (duration / 16);
+                let current = start;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    // Format number display
+                    if (target === 3) {
+                        element.textContent = Math.floor(current) + 'x';
+                    } else {
+                        element.textContent = Math.floor(current);
+                    }
+                }, 16);
+            }
+            
+            setupSmoothScroll() {
+                // Smooth scroll for anchor links
+                document.addEventListener('click', (e) => {
+                    if (e.target.matches('a[href^="#"]')) {
+                        e.preventDefault();
+                        const targetId = e.target.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            const headerHeight = this.header.offsetHeight;
+                            const targetPosition = targetElement.offsetTop - headerHeight;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            }
+            
+            setupAnimations() {
+                // Intersection Observer for scroll animations
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.animationPlayState = 'running';
+                        }
+                    });
+                }, observerOptions);
+                
+                // Observe animated elements
+                const animatedElements = document.querySelectorAll('.animate-fade-in-up, .card, .ps-card, .metric-card');
+                animatedElements.forEach(element => {
+                    element.style.animationPlayState = 'paused';
+                    observer.observe(element);
+                });
+                
+                // Button hover effects
+                const buttons = document.querySelectorAll('.btn-primary-synovra, .btn-secondary-synovra');
+                buttons.forEach(button => {
+                    button.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-2px)';
+                    });
+                    
+                    button.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0)';
+                    });
+                });
+                
+                // Card hover effects
+                const interactiveCards = document.querySelectorAll('.card--interactive, .stat-item');
+                interactiveCards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-4px) scale(1.02)';
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = '';
+                    });
+                });
+            }
+            
+            setupAccessibility() {
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Tab') {
+                        document.body.classList.add('keyboard-navigation');
+                    }
+                });
+                
+                document.addEventListener('mousedown', () => {
+                    document.body.classList.remove('keyboard-navigation');
+                });
+                
+                // Enhanced focus styles for keyboard navigation
+                const style = document.createElement('style');
+                style.textContent = `
+                    .keyboard-navigation *:focus {
+                        outline: 2px solid var(--synovra-primary) !important;
+                        outline-offset: 2px !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+        
+        // Initialize website when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new SynovraWebsite();
+            
+            // Loading animation
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease-out';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // Respect reduced motion preferences
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const animatedElements = document.querySelectorAll('[class*="animate-"]');
+            animatedElements.forEach(element => {
+                element.style.animation = 'none';
+                element.style.opacity = '1';
+                element.style.transform = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
