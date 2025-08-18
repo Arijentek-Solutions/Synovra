@@ -1594,8 +1594,8 @@
             
             setupCounters() {
                 const observerOptions = {
-                    threshold: 0.5,
-                    rootMargin: '0px 0px -50px 0px'
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -100px 0px'
                 };
                 
                 const observer = new IntersectionObserver((entries) => {
@@ -1618,9 +1618,33 @@
                 if (metricsSection) {
                     observer.observe(metricsSection);
                 }
+                
+                // Fallback for mobile devices - scroll-based trigger
+                const checkVisibility = () => {
+                    if (metricsSection && !metricsSection.hasAttribute('data-animated')) {
+                        const rect = metricsSection.getBoundingClientRect();
+                        const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+                        if (isVisible) {
+                            this.animateCounters(metricsSection);
+                            window.removeEventListener('scroll', checkVisibility);
+                        }
+                    }
+                };
+                
+                // Add scroll listener as fallback
+                window.addEventListener('scroll', checkVisibility);
+                
+                // Also check on resize (mobile orientation change)
+                window.addEventListener('resize', checkVisibility);
+                
+                // Initial check after a delay
+                setTimeout(checkVisibility, 1000);
             }
             
             animateCounters(section) {
+                // Mark section as animated to prevent duplicate animations
+                section.setAttribute('data-animated', 'true');
+                
                 const statNumbers = section.querySelectorAll('.stat-number, .metric-number__animated');
                 
                 statNumbers.forEach((element, index) => {
