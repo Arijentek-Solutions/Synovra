@@ -164,6 +164,13 @@ body {
     margin-right: 12px;
 }
 
+.logo-image {
+    width: 56px;
+    height: 56px;
+    margin-right: 4px;
+    object-fit: contain;
+}
+
 .header-nav {
     display: none;
     list-style: none;
@@ -1399,6 +1406,13 @@ body {
     font-weight: var(--font-weight-semibold);
     font-size: 18px;
     margin-right: 12px;
+}
+
+.footer-logo__image {
+    width: 56px;
+    height: 56px;
+    margin-right: 4px;
+    object-fit: contain;
 }
 
 .footer-description {
